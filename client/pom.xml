@@ -11,7 +11,7 @@
 	language governing permissions and limitations under the License. -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	
+
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
@@ -20,7 +20,7 @@
 		<version>1.0-SNAPSHOT</version>
 		<relativePath>../</relativePath>
 	</parent>
-	
+
 	<groupId>org.lla-private</groupId>
 	<artifactId>rest-client</artifactId>
 	<packaging>jar</packaging>
@@ -84,34 +84,25 @@
 			<artifactId>rest-bean</artifactId>
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
-		
-                <!-- Jersey -->
+
+		<!-- Jersey -->
 		<dependency>
-			<groupId>com.sun.jersey</groupId>
+			<groupId>org.glassfish.jersey.core</groupId>
 			<artifactId>jersey-client</artifactId>
-			<version>${jersey-client.version}</version>
+			<version>${jersey.version}</version>
 		</dependency>
 
-                <!-- Server wird hier nicht gebraucht
-		<dependency>
-			<groupId>com.sun.jersey</groupId>
-			<artifactId>jersey-servlet</artifactId>
-			<version>${jersey-server.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.sun.jersey</groupId>
-			<artifactId>jersey-json</artifactId>
-			<version>${jersey-server.version}</version>
-		</dependency>
--->
+		<!-- Server wird hier nicht gebraucht <dependency> <groupId>com.sun.jersey</groupId> 
+			<artifactId>jersey-servlet</artifactId> <version>${jersey-server.version}</version> 
+			</dependency> <dependency> <groupId>com.sun.jersey</groupId> <artifactId>jersey-json</artifactId> 
+			<version>${jersey-server.version}</version> </dependency> -->
 		<!-- Jackson -->
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-mapper-asl</artifactId>
 			<version>${jackson.version}</version>
 		</dependency>
-			
+
 	</dependencies>
 
 	<build>

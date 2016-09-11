@@ -1,18 +1,18 @@
 package org.lla_private.guice.provider;
 
-import com.google.inject.Provider;
-import com.sun.jersey.api.client.Client;
+import javax.ws.rs.client.ClientBuilder;
 
-public final class RestClientProvider implements Provider<Client> {
+import com.google.inject.Provider;
+
+public final class RestClientProvider implements Provider<ClientBuilder> {
 
 	private static final int HTTP_TIMEOUT_IN_MS = 25;
 
 	@Override
-	public Client get() {
-		final Client restClient = Client.create();
-
-		restClient.setConnectTimeout(HTTP_TIMEOUT_IN_MS);
-		restClient.setReadTimeout(HTTP_TIMEOUT_IN_MS);
+	public ClientBuilder get() {
+		final ClientBuilder restClient = ClientBuilder.newBuilder();
+//		restClient.setConnectTimeout(HTTP_TIMEOUT_IN_MS);
+//		restClient.setReadTimeout(HTTP_TIMEOUT_IN_MS);
 
 		return restClient;
 	}

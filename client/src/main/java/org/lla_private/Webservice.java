@@ -4,7 +4,10 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 import org.codehaus.jackson.map.ObjectMapper;
 import org.lla_private.bean.Bean;
@@ -13,10 +16,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.google.inject.Inject;
-import com.sun.jersey.api.client.Client;
-import com.sun.jersey.api.client.ClientHandlerException;
-import com.sun.jersey.api.client.ClientResponse;
-import com.sun.jersey.api.client.UniformInterfaceException;
+
 
 public class Webservice implements IWebservice {
 
@@ -33,7 +33,7 @@ public class Webservice implements IWebservice {
 	@Inject
 	@WebserviceRestClient
 	private Client restClient;
-
+	// Client client = ClientBuilder.newBuilder().build();
 	private URI uri;
 
 	public Webservice() {
@@ -135,18 +135,18 @@ public class Webservice implements IWebservice {
 
 	String getContentFromURL(final URI uri) {
 		String entityString = "";
-		try {
-			final ClientResponse clientResponse = restClient.resource(uri).accept(MediaType.APPLICATION_JSON).get(ClientResponse.class);
-			entityString = clientResponse.getEntity(String.class);
-		}
-		catch (final ClientHandlerException e) {
-
-			LOGGER.warn("Exception during REST call to uri: " + uri, e);
-		}
-		catch (final UniformInterfaceException e) {
-
-			LOGGER.warn("Exception during REST call to uri: " + uri, e);
-		}
+//		try {
+			final Response clientResponse = restClient.target(uri).request(MediaType.APPLICATION_JSON).get();
+			entityString = clientResponse.readEntity(String.class);
+//		}
+//		catch (final ClientHandlerException e) {
+//
+//			LOGGER.warn("Exception during REST call to uri: " + uri, e);
+//		}
+//		catch (final UniformInterfaceException e) {
+//
+//			LOGGER.warn("Exception during REST call to uri: " + uri, e);
+//		}
 		return entityString;
 	}
 
