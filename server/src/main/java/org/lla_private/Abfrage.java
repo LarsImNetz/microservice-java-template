@@ -20,30 +20,13 @@ public class Abfrage {
 	private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 
 	@GET
-	@Path("list/{kundenNr}")
+	@Path("hello")
 	@Produces(MediaType.APPLICATION_JSON)
-	public String getKontingente(@PathParam("kundenNr") final Integer kundenNr) {
+	public String getHello() {
 		Bean bean = new Bean();
 		bean.setA("Hello World");
-		LOGGER.debug("getKontingente(" + kundenNr + ") was called and returned a bean");
+		LOGGER.debug("getHello() was called and returned a bean");
 		return createJsonString(bean);
-	}
-
-	@GET
-	@Path("available/{kundenNr}")
-	@Produces(MediaType.APPLICATION_JSON)
-	public String hasAnyKontingent(@PathParam("kundenNr") final Integer kundenNr) {
-		LOGGER.debug("hasAnyKontingent(" + kundenNr + ") was called and returned ");
-		return createJsonString("a");
-	}
-
-	@GET
-	@Path("available/{kundenNr}/{plz}")
-	@Produces(MediaType.APPLICATION_JSON)
-	public String hasKontingent(@PathParam("kundenNr") final Integer kundenNr, @PathParam("plz") final Integer plz) {
-		LOGGER.debug("hasKontingent(" + kundenNr + ", " + plz + ") was called and returned");
-
-		return createJsonString(kundenNr + " " + plz);
 	}
 
 	private String createJsonString(final Object list) {

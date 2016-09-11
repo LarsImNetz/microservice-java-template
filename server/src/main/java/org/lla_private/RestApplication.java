@@ -25,7 +25,6 @@ public class RestApplication extends Application {
 		final Set<Class<?>> classes = new HashSet<Class<?>>();
 
 		classes.add(Abfrage.class);
-		classes.add(BuchenAktualisierung.class);
 
 		return classes;
 	}
