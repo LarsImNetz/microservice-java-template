@@ -2,6 +2,7 @@ package org.lla_private.bean;
 
 import java.io.Serializable;
 
+@SuppressWarnings("serial")
 public class Bean implements Serializable {
 
 	String a;
