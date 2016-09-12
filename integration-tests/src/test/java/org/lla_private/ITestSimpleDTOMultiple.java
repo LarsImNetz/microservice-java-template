@@ -41,6 +41,7 @@ public class ITestSimpleDTOMultiple {
 		for (plz = 1; plz <= 100000; plz++) {
 			s.setPlz(plz);
 			final String json = OBJECTMAPPER.createJsonString(s);
+			Assert.assertNotNull(json);
 			++count;
 		}
 		long end = System.currentTimeMillis() - start;
