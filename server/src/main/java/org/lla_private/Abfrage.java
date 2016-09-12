@@ -16,6 +16,7 @@ public class Abfrage {
 
 	private static Logger LOGGER = LoggerFactory.getLogger(Abfrage.class);
 
+	// TODO: OBJECT_MAPPER von aussen injecten
 	private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 
 	@GET
