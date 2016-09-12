@@ -23,8 +23,10 @@
 
 	<groupId>org.lla-private</groupId>
 	<artifactId>rest-server</artifactId>
-	<packaging>war</packaging>
 	<version>1.0.0</version>
+
+	<packaging>war</packaging>
+
 	<name>Rest-Bean-Server</name>
 	<description></description>
 	<!-- <organization> <name>company name</name> <url>company url</url> </organization> -->

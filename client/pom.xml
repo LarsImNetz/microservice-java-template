@@ -23,8 +23,10 @@
 
 	<groupId>org.lla-private</groupId>
 	<artifactId>rest-client</artifactId>
-	<packaging>jar</packaging>
 	<version>1.0-SNAPSHOT</version>
+
+	<packaging>jar</packaging>
+
 	<name>Rest-Bean-Client</name>
 	<description></description>
 	<!-- <organization> <name>company name</name> <url>company url</url> </organization> -->
